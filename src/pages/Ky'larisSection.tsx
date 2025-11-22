@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Waves, Globe } from 'lucide-react';
 import FeatureCard from '../components/FeatureCard';
+import galaxyImg from '../assets/galaxy.png';
 
 const KyLarisFeatures: React.FC = () => {
     const features = [
@@ -27,26 +28,37 @@ const KyLarisFeatures: React.FC = () => {
 
     return (
         <section id="about" className="py-24 px-6 bg-gray-950 relative z-10">
-            <div className="max-w-7xl mx-auto text-center">
+            {/* background image */}
+            <div className="absolute inset-0 z-0">
+                <img
+                    src={galaxyImg}
+                    alt="Galaxy Background"
+                    className="w-full h-full object-cover opacity-50"
+                />
+                <div className="absolute inset-0 bg-gray-950/80"></div>
+            </div>
+            <div className="max-w-7xl mx-auto text-center relative z-10">
 
                 {/* Section Title */}
                 <motion.h2
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="text-4xl md:text-5xl font-extrabold mb-4 text-white box-shadow-[0_0_15px_rgba(0,240,255,0.4)]"
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="text-4xl md:text-5xl font-extrabold mb-4 text-white text-shadow-[0_0_15px_rgba(0,240,255,0.4)]"
                 >
                     KY'LARIS : THE CRYSTALLINE HEART
                 </motion.h2>
 
                 {/* Subtitle */}
+                {/* Subtitle - UPDATED to cover Environment and Climate */}
                 <motion.p
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                     className="text-xl text-kylaris-primary mb-16 max-w-3xl mx-auto"
                 >
+                    Experience the <span className='font-bold '>permanent twilight environment</span> and <span className='font-bold'>stable, mild climate</span>.
                     Discover the phenomena that redefine existence on the Crystalline Heart.
                 </motion.p>
 

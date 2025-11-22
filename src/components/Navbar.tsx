@@ -41,14 +41,17 @@ const Navbar: React.FC = () => {
         e.preventDefault();
         const element = document.getElementById(id);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-            setActiveSection(id);
             setIsOpen(false);
+
+            setTimeout(() => {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                setActiveSection(id);
+            }, 100);
         }
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 ">
+        <nav className="fixed top-0 left-0 w-full z-50  border-b border-white/10 bg-black/20  rounded-2xl backdrop-blur-md">
             <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
                 {/* Logo */}
                 <motion.div
@@ -74,7 +77,7 @@ const Navbar: React.FC = () => {
                 </motion.div>
 
                 {/* Desktop Nav Items */}
-                <div className="hidden md:flex items-center gap-8 p-5 border-b border-white/10 bg-black/20  rounded-full backdrop-blur-md">
+                <div className="hidden md:flex items-center gap-8 p-5 ">
                     {navItems.map((item) => (
                         <a
                             key={item.name}
@@ -114,7 +117,9 @@ const Navbar: React.FC = () => {
                                 <a
                                     key={item.name}
                                     href={`#${item.id}`}
-                                    onClick={(e) => scrollToSection(e, item.id)}
+                                    onClick={(e) => {
+                                        scrollToSection(e, item.id)
+                                    }}
                                     className={`text-lg uppercase tracking-widest transition-colors ${activeSection === item.id
                                         ? 'text-kylaris-primary font-bold'
                                         : 'text-kylaris-secondary/80 hover:text-kylaris-primary'

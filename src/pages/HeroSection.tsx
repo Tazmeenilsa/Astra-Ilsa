@@ -42,18 +42,8 @@ const HeroSection: React.FC = () => {
     };
 
     return (
-        <section id="home" className="min-h-screen flex flex-col items-center justify-center px-6 py-5 relative overflow-hidden text-center z-10">
-            <div className='absolute bottom-0 left-0 w-full h-[70vh] z-0 pointer-events-none'>
-                <Galaxy
-                    mouseRepulsion={false}
-                    mouseInteraction={false}
-                    density={0.3}
-                    glowIntensity={0.2}
-                    saturation={0.4}
-                    hueShift={150}
-                    starSpeed={0.2}
-                />
-            </div>
+        <section id="home" className="min-h-screen flex flex-col items-center justify-center px-6 mt-30 relative overflow-hidden text-center z-10">
+
 
             <motion.div
                 variants={containerVariants}
