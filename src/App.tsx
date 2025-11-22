@@ -1,4 +1,6 @@
 import MainLayout from './layouts/MainLayout'
+import BookingCTA from './pages/BookingCTA'
+import Footer from './pages/Footer'
 
 import HeroSection from './pages/HeroSection'
 import KyLarisFeatures from './pages/Ky\'larisSection'
@@ -13,6 +15,8 @@ function App() {
         <KyLarisFeatures />
         <Voyages />
         <TravelPackages />
+        <BookingCTA />
+        <Footer />
       </MainLayout>
 
     </>
