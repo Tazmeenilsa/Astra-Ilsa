@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Galaxy from '../components/Galaxy';
 
 const HeroSection: React.FC = () => {
     const containerVariants = {
@@ -41,7 +42,19 @@ const HeroSection: React.FC = () => {
     };
 
     return (
-        <section id="home" className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden text-center z-10">
+        <section id="home" className="min-h-screen flex flex-col items-center justify-center px-6 py-5 relative overflow-hidden text-center z-10">
+            <div className='absolute bottom-0 left-0 w-full h-[70vh] z-0 pointer-events-none'>
+                <Galaxy
+                    mouseRepulsion={false}
+                    mouseInteraction={false}
+                    density={0.3}
+                    glowIntensity={0.2}
+                    saturation={0.4}
+                    hueShift={150}
+                    starSpeed={0.2}
+                />
+            </div>
+
             <motion.div
                 variants={containerVariants}
                 initial="hidden"
@@ -50,6 +63,7 @@ const HeroSection: React.FC = () => {
             >
                 {/* Welcome Text - Left to Right Animation */}
                 <motion.h2
+
                     variants={welcomeVariants}
                     className="text-kylaris-primary tracking-[0.5em] text-lg md:text-3xl uppercase font-bold mb-4"
                 >
@@ -59,7 +73,7 @@ const HeroSection: React.FC = () => {
                 {/* Company Name - Huge */}
                 <motion.h1
                     variants={titleVariants}
-                    className="text-7xl md:text-8xl font-bold text-white leading-none font-display drop-shadow-[0_0_40px_rgba(0,240,255,0.4)]"
+                    className="text-7xl md:text-8xl font-bold text-white leading-none font-display box-shadow-[0_0_40px_rgba(0,240,255,0.4)]"
                 >
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-kylaris-primary via-white to-kylaris-accent">
                         ASTRA ILSA
@@ -85,16 +99,15 @@ const HeroSection: React.FC = () => {
                 {/* CTA Button */}
                 <motion.button
                     variants={itemVariants}
-                    whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(217, 70, 239, 0.5)" }}
-                    whileTap={{ scale: 0.95 }}
-                    className="mt-10 px-10 py-4 bg-transparent border border-kylaris-primary/50 text-kylaris-primary font-bold tracking-widest uppercase hover:bg-kylaris-primary hover:text-black transition-all duration-300 rounded-full backdrop-blur-sm"
+                    whileHover={{ scale: 0.95, boxShadow: "0 0 30px rgba(217, 70, 239, 0.5)" }}
+                    // whileTap={{ scale: 0.95 }}
+                    className="mt-10 px-10 py-4 bg-transparent border border-kylaris-primary/50 text-kylaris-primary font-bold tracking-widest uppercase hover:will-change-transform hover:bg-kylaris-primary hover:text-black transition-all duration-300 rounded-full"
                 >
                     Discover Ky'laris
                 </motion.button>
             </motion.div>
 
-            {/* Optional Background Elements */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-kylaris-primary/5 rounded-full blur-[100px] -z-10 pointer-events-none animate-pulse" />
+
         </section>
     );
 };

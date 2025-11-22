@@ -12,7 +12,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     return (
         <div className="relative min-h-screen w-full bg-black overflow-x-hidden">
             {/* Aurora Background - 50% height */}
-            <div className="absolute top-0 left-0 w-full h-[50vh] z-1">
+            <div className="absolute top-0 left-0 w-full h-[30vh] z-1">
                 <Aurora
                     colorStops={["#00f0ff", "#e0f2fe", "#d946ef"]}
                     blend={0.3}
@@ -24,7 +24,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
 
 
-            <div className='absolute top-0 left-0 w-full h-[600px] z-0 pointer-events-none'>
+            {/* <div className='absolute top-0 left-0 w-full h-[600px] z-0 pointer-events-none'>
                 <Galaxy
                     mouseRepulsion={false}
                     mouseInteraction={false}
@@ -34,7 +34,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                     hueShift={150}
                     starSpeed={0.5}
                 />
-            </div>
+            </div> */}
 
             {/* Content */}
             <div className="relative z-1">
