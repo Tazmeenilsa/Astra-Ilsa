@@ -13,6 +13,7 @@ const Navbar: React.FC = () => {
         { name: "Ky'laris Lore", id: 'about' },
         { name: 'Voyages', id: 'services' },
         { name: 'Packages', id: 'packages' },
+        { name: 'Gallery', id: 'gallery' },
         { name: 'Contact', id: 'contact' }
     ];
 
@@ -52,7 +53,7 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50  border-b border-white/10 bg-black/20  rounded-2xl backdrop-blur-md">
+        <nav className="fixed top-0 left-0 w-full z-50  border-b border-white/10 bg-black/20  rounded-b-2xl backdrop-blur-md">
             <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
                 {/* Logo */}
                 <motion.div

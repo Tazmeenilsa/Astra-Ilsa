@@ -8,10 +8,10 @@ const BookingCTA: React.FC = () => {
             <div className="max-w-4xl mx-auto text-center border-t border-b border-kylaris-accent/30 py-16">
 
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                     <Mail className="w-12 h-12 text-kylaris-accent mx-auto mb-4 drop-shadow-[0_0_15px_rgba(217,70,239,0.5)]" />
 
@@ -26,7 +26,7 @@ const BookingCTA: React.FC = () => {
                     <div className="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
                         <input
                             type="email"
-                            placeholder="Your Galactic Email Address"
+                            placeholder="Your Email Address"
                             className="flex-grow p-3 rounded-full bg-white/10 border border-kylaris-primary/50 text-white placeholder-kylaris-secondary/70 focus:ring-2 focus:ring-kylaris-accent transition-all duration-300"
                         />
                         <motion.button
